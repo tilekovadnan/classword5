@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">кнопочка </button>
+    <button id="btn2">кнопочка</button>
+     <script>
+       let btn = document.getElementById('btn');
+       btn.style.background = 'red';
+       btn.style.widows = '200px';
+       btn.style.height = '40px';
+
+            function cleanChangeBG(tag, bg, bxs){
+                tag.style.background = bg;
+                tag.style.boxShadow = bxs;
+            }
+        btn.style.border = 'none';
+        btn.style.display = 'block';
+        btn.style.fontSize = '20px';
+        btn.style.background = 'linear-gradient(to right,#8a2387,#e94057, #f27121)';
+        btn.style.color = 'white';
+        btn.style.boxShadow = "0 0 10px 0 #8a2387";
+        btn.style.width = '200px';
+        btn.style.height = '60px';
+        btn.style.cursor = 'pointer';
+        btn.style.outline = 'none';
+        btn.style.margin = 'auto';
+
+        function changeBG(tag){
+            if(tag.counter % 2){
+                            tag.style.background = "linear-gradient(to right,#47776e6, #8e54e9)";
+                            tag.style.boxShadow = '0 0 10px 0 #4776e6';
+                        }
+                        else{
+                        tag.style.background = "linear-gradient(to right, #8a2387,#e94057,#f27121)";
+                        tag.style.boxShadow = "0 0 10px 0 #8a2387";
+                        }
+                    }
+                 let btn2 = document.getElementById('btn2');
+                btn2.style.cssText =   'border: none;\
+                                        display:block;\
+                                        font-size: 18px;\
+                                        color: #fff;\
+                                        background: dodgerblue;\
+                                        box-shadow: 0 0 10px 0 dodgerblue;\
+                                        width: 200px;\
+                                        height: 60px;\
+                                        cursor: pointer;\
+                                        outline: none;\
+                                        margin: 100px auto\ ';
+                btn2.counter = 0;
+
+                btn2.onmouseover = function(){
+                    this.counter++;
+                    console.log('Навели мышкой' + this.counter);
+                    if(this.counter % 2){
+                        cleanChangeBG(this, '#8e54e9', '0 0 10px 0 #4776e6');
+                    }
+                    else{
+                        cleanChangeBG(this, '#f27121', '0 0 10px 0 #8a2387');
+                    }
+                }
+     </script>
+</body>
+</html>
